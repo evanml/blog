@@ -2,15 +2,11 @@
 
 {% block content %}
 <div class="sticky-sidebar">
-  <a href="#">All</a>
-  <a href="#">Vietnam</a>
-  <a href="#">Arizona</a>
+  {{ filter.form }}
 </div>
-
-
 <div class="container">
-  <div class="row">
-    {% for photo in photos %}
+<div class="row">
+    {% for photo in filter.qs %}
     <div class="col-md-4">
       <div>
         <a href="{% url 'photo_detail' pk=photo.pk %}">
@@ -18,14 +14,11 @@
         </a>
         <div class="caption">
           <h2><a href="{% url 'photo_detail' pk=photo.pk %}">{{ photo.title }}</a></h2>
-          <h3>{{ photo.description }}</h3>
-          <h4>Posted: {{ photo.published_date }}</h4>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-
 </div>
 
 

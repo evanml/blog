@@ -104,8 +104,7 @@ h4 {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  color: #808487;
 }
 
 /* Add a color to the active/current link */
@@ -113,18 +112,16 @@ h4 {
   background-color: #f2f2f2;
   color: white;
 }
-/* testing image
-.image{
-  padding: inherit;
+
+
+.col-md-4 img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: 1px;
+  border-radius: none;
 }
-*/
-/*
-.image-detail {
-  width: 1500px;
-  background-color: grey;
-  height: auto;
-}
-*/
+
+
+
 .image-detail img {
   max-width: 800px;
   width: auto;
@@ -144,28 +141,6 @@ h4 {
 }
 
 
-/*
-.image-text{
-  display: inline;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-}
-*/
-/*
-.float-md-left {
-  max-width: 800px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-color: 1px;
-}
-
-.image-text-detail{
-  margin: 15px 5px 5px 10px;
-  float: center;
-}
-*/
-
 
 
 
@@ -182,55 +157,111 @@ h4 {
     font-size: 14px;
     margin-top: 0px;
 }
-/* GALLERY
-.caption p {
-  font-family: 'Heebo';
-  font-size: 10px;
-  color: #333333;
 
-}
-*/
-
-.row{
-  margin-left: inherit;
-  margin-top: 10px;
-}
 
 .sticky-sidebar {
   height: auto;
-  width: 160px;
+  width: auto;
   position: fixed;
   top: auto;
   left: auto;
-  background-color: #cadbe8;
+  background-color: #ebf1f5;
   overflow-x: hidden;
-  border-radius: 10px;
-  margin-top: 10px
+  border-radius: 5px;
+  border: 5px;
+  border-color: black;
+  margin: 10px 10px 10px 10px;
+  padding: 5px 10px 5px 10px;
 
 
 }
 
+.sticky-sidebar a:hover {
+  color: #808487;
+}
+
+.sticky-sidebar label {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 0px;
+    margin-left: -5px;
+}
+
+.sticky-sidebar ul {
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+
+}
+
+.sticky-sidebar li {
+    padding: 5px 0px 0px 0px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
 .sticky-sidebar a {
-  padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 16px;
   color: black;
   display: block;
 }
 
-.sticky-sidebar a:hover {
-  color: #f1f1f1;
-}
-
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size)*/
-@media screen and (max-height: 450px) {
-  .sticky-sidebar {padding-top: 15px;}
-  .sticky-sidebar a {font-size: 18px;}
-}
-
 .empty-state {
     padding: 25px 25px 25px 25px;
     font-size: 24px;
   }
+
+
+
+/* Responsive styles*/
+@media screen and (max-width: 900px) {
+
+
+  .sticky-sidebar{
+    width: 100vw;
+    position: absolute;
+    top: auto;
+    left: auto;
+    margin: 0px 5px 0px 5px;
+    padding: auto;
+
+  }
+  .sticky-sidebar ul {
+    list-style: inline-flex;
+
+  }
+
+  .sticky-sidebar li {
+    display: inline;
+    float: left;
+
+  }
+  .sticky-sidebar a {
+    padding: 0px 3px 0px 3px;
+  }
+
+  .row {
+    margin-top: 80px;
+  }
+
+  .image-detail img {
+    max-width: 95%;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-color: 1px;
+
+
+
+  }
+
+  .image-text{
+    display: inline-block;
+    margin: 10px;
+    border: 5px;
+
+  }
+
+
+}
