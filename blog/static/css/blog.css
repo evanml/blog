@@ -26,6 +26,64 @@ h4 {
   color: #333333;
 }
 
+footer {
+  font-size: 10px;
+  position:relative;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.linkedin-button {
+  background-color: #003f67;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px 10px 20px;
+
+}
+
+
+.linkedin-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bolder;
+  padding: 0 0 0 0;
+
+}
+
+.linkedin {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.github-button {
+  background-color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px 10px 20px;
+
+}
+
+
+.github-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bolder;
+  padding: 0 0 0 0;
+
+}
+
+.github {
+  margin-top: 25px;
+  margin-left: 25px;
+
+}
+
+
 
 /* UTILITIES */
 .page-header {
@@ -46,7 +104,7 @@ h4 {
 }
 
 .content {
-    margin-left: 40px;
+    margin-left: 25px;
 }
 
 
@@ -181,7 +239,7 @@ h4 {
 }
 
 .sticky-sidebar label {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     padding-left: 0px;
     margin-left: -5px;
@@ -196,7 +254,7 @@ h4 {
 .sticky-sidebar li {
     padding: 5px 0px 0px 0px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     color: black;
 }
 

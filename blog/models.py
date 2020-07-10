@@ -26,7 +26,7 @@ default_gallery_id = 3
 class Photo(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, default='elarrimore', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to='images/')
@@ -44,9 +44,9 @@ class Photo(models.Model):
 
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     active = models.BooleanField(default=True)
 
     def publish(self):
