@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 import shutil
 
-img_list = listdir('/Users/elarrimore/Desktop/Photos/upload_test')
-gal_name = path.basename('/Users/elarrimore/Desktop/Photos/upload_test')
-src_dir = '/Users/elarrimore/Desktop/Photos/upload_test'
+img_list = listdir('/Users/elarrimore/Desktop/Photos/Cambodia/Cambodia Best/Cambodia Website')
+gal_name = path.basename('/Users/elarrimore/Desktop/Photos/Cambodia/Cambodia Best/Cambodia Website')
+src_dir = '/Users/elarrimore/Desktop/Photos/Cambodia/Cambodia Best/Cambodia Website'
 media_dir = '/Users/elarrimore/Desktop/PG/media/images'
 
 class Command(BaseCommand):
@@ -44,7 +44,7 @@ class Command(BaseCommand):
                     created_date = timezone.now(),
                     published_date = timezone.now(),
                     active = False,
-                    gallery = Gallery.objects.get(title='upload_test')
+                    gallery = Gallery.objects.get(title='Cambodia')
                     )
                 upload.save()
         #copy files to media dir
