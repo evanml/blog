@@ -4,7 +4,6 @@ from django.utils import timezone
 from django import forms
 import django_filters
 from cloudinary.models import CloudinaryField
-import cloudinary.api
 # Create your models here.
 
 
