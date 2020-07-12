@@ -6,7 +6,8 @@
         <div class="post">
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
-            <div class="date">
+            <a href="{{ post.link }}" target="_blank">Click Here to View</a>
+            <div class="date">Posted:
                 {{ post.published_date }}
             </div>
         </div>

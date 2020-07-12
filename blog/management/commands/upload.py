@@ -25,9 +25,13 @@ class Command(BaseCommand):
         #    else:
         #        final_gal = gal_name
         for photo in img_list:
+            #removes hidden files
             if not photo.startswith('.'):
+                # extracts filename without .jpg
                 img_title = path.splitext(photo)[0]
+                # creates usable file for display
                 img = path.basename(media_dir) + '/' + photo
+                # gets userid
                 usr = User.objects.get(username='elarrimore')
 
 
@@ -46,4 +50,5 @@ class Command(BaseCommand):
         #copy files to media dir
         for photo in img_list:
             if not photo.startswith('.'):
+                #copies image from folder to blog media file
                 shutil.copy(path.join(src_dir, photo), media_dir)

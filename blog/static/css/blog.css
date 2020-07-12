@@ -28,7 +28,7 @@ h4 {
 
 footer {
   font-size: 10px;
-  position:relative;
+  position: absolute;
   bottom: 5px;
   width: 100%;
   text-align: center;
@@ -131,11 +131,20 @@ footer {
 
 .post {
     margin-bottom: 70px;
+
+    padding: 0px 20px 20px 20px;
+    border-top: 1px solid;
+    border-color: #ebf1f5;
+    width: 100%;
 }
 
-.post h2 a, .post h2 a:visited {
+.post h2 a, .post h2 a:visited, a {
     color: #000000;
+    display: inline;
+
 }
+
+
 
 
 
@@ -321,5 +330,22 @@ footer {
 
   }
 
+  .post {
+      margin-bottom: 70px;
+      margin-left: 25px;
+      padding: 0px 20px 20px 20px;
+      border: 2px solid;
+      border-color: #ebf1f5;
+      width: 90%;
+  }
 
+  .post h2 a, .post h2 a:visited {
+      color: #000000;
+      display: inline;
+
+  }
+
+  .post p {
+    width: 90%;
+  }
 }

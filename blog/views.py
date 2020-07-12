@@ -3,10 +3,10 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.utils import timezone
 from .models import Post, Photo, Gallery
-
 from .filters import PhotoFilter
 from django.views import View
 from django.views.generic import ListView, DetailView
+
 
 # Create your views here.
 def about(request):
