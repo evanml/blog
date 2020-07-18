@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url
 import cloudinary
+import cloudinary.api
+import cloudinary.uploader
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,14 +45,7 @@ INSTALLED_APPS = [
     'django_filters',
     'cloudinary'
 ]
-# cloudinary config
-cloudinary.config(
-    cloud_name = 'dl3h6iib2',
-    api_key = '975132373835258',
-    api_secret = 'C8hW3R3U4n-fj9msb3F_um8EPF2s',
-    secure = True
 
-)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -150,10 +145,37 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
+
 # media config
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_ROOT = 'os.path.join(BASE_DIR, media)'
+
+
+# cloudinary config
+cloudinary.config(
+   cloud_name = 'dl3h6iib2',
+   api_key = '975132373835258',
+   api_secret = '8hW3R3U4n-fj9msb3F_um8EPF2s'
+)
+
+
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}

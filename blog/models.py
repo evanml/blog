@@ -4,7 +4,9 @@ from django.utils import timezone
 from django import forms
 import django_filters
 import cloudinary
+import cloudinary.api
 from cloudinary.models import CloudinaryField
+
 # Create your models here.
 
 
@@ -32,7 +34,7 @@ class Photo(models.Model):
     description = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    image = cloudinary.models.CloudinaryField('image')
+    image = CloudinaryField('image')
     active = models.BooleanField(default=True)
     gallery = models.ForeignKey('Gallery', null=True, on_delete=models.SET_NULL, default=default_gallery_id)
 
