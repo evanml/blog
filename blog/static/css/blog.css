@@ -28,8 +28,8 @@ h4 {
 
 footer {
   font-size: 10px;
-  position: absolute;
-  bottom: 5px;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   text-align: center;
 }
