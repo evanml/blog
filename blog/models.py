@@ -37,6 +37,7 @@ class Photo(models.Model):
     image = CloudinaryField('image')
     active = models.BooleanField(default=True)
     gallery = models.ForeignKey('Gallery', null=True, on_delete=models.SET_NULL, default=default_gallery_id)
+    credit = models.CharField(max_length=200, blank=True)
 
 
     def publish(self):

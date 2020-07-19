@@ -7,6 +7,9 @@
     <h1>{{ photo.title }}</h1>
     <h3>{{ photo.description }}</h3>
     <h4>{{ photo.published_date }}</h4>
+    {% if photo.credit %}
+    <h4><i>Credit:{{ photo.credit }}</h4>
+    {% endif %}
   </div>
 </div>
 

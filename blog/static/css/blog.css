@@ -28,7 +28,7 @@ h4 {
 
 footer {
   font-size: 10px;
-  position: fixed;
+  position: static;
   bottom: 0px;
   width: 100%;
   text-align: center;
