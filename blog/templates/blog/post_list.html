@@ -4,7 +4,9 @@
     {% if posts %}
     {% for post in posts %}
         <div class="post">
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <h2>{{ post.title }}</a></h2>
+            <!-- link to post detail -->
+          <!--  <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2> -->
             <p>{{ post.text|linebreaksbr }}</p>
             <a href="{{ post.link }}" target="_blank">Click Here to View</a>
             <div class="date">Posted:
