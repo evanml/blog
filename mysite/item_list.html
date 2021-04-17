@@ -1,0 +1,14 @@
+{% extends 'homebase/base.html' %}
+
+{% block content %}
+    {% if items %}
+    {% for item in items %}
+        <div>
+            <h2>{{ item.text }}</a></h2>
+            
+        </div>
+    {% endfor %}
+    {% else %}
+    <div>There is nothing here </div>
+    {% endif %}
+{% endblock %}
