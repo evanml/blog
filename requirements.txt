@@ -4,6 +4,8 @@ cloudinary==1.41.0
 dj-database-url==2.3.0
 Django==5.1.2
 django-filter==24.3
+gunicorn==23.0.0
+packaging==24.1
 postgres==4.0
 psycopg2-binary==2.9.10
 psycopg2-pool==1.2
