@@ -81,7 +81,14 @@ MIDDLEWARE = [
 ]
 
 # Redirect HTTP traffic to HTTPS (if you're using SSL)
-SECURE_SSL_REDIRECT = True
+if os.getenv('DJANGO_ENV') == 'production':
+    # Production-specific settings
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 31536000  # Enable HSTS only in production
+
+else:
+    # Local development settings
+    SECURE_SSL_REDIRECT = False  # Disable SSL redirection for local development
 
 # Redirect example.com to www.example.com
 if os.getenv('DJANGO_ENV') == 'production':
@@ -89,6 +96,11 @@ if os.getenv('DJANGO_ENV') == 'production':
     PREPEND_WWW = True
 
     ROOT_URLCONF = 'mysite.urls'
+else:
+    # Local development settings (default)
+    PREPEND_WWW = False  # You likely don't want this in local development
+    ROOT_URLCONF = 'mysite.urls'
+
 
 TEMPLATES = [
     {
