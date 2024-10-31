@@ -31,6 +31,28 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'www.evanlarrimore.com']
 
+# Force HTTPS for cookies and sessions
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Ensure browser only sends cookies over HTTPS
+SECURE_BROWSER_XSS_FILTER = True
+
+# Prevent content sniffing (security against MIME-type attacks)
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable HSTS (HTTP Strict Transport Security) for HTTPS enforcement
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Ensure cookies are not accessible via JavaScript (for security)
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+
+# X-Frame-Options header to prevent clickjacking attacks
+X_FRAME_OPTIONS = 'DENY'    
+
 
 # Application definition
 
@@ -58,7 +80,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+# Redirect HTTP traffic to HTTPS (if you're using SSL)
+SECURE_SSL_REDIRECT = True
+
+# Redirect example.com to www.example.com
+if os.getenv('DJANGO_ENV') == 'production':
+
+    PREPEND_WWW = True
+
+    ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
