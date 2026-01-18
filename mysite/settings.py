@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5hv)3q_18$d4_9($ek&(ggv#6f$x+x$3h0^rn=ppx!f&%%&*fv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DJANGO_ENV') != 'production'
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'www.evanlarrimore.com']
 
@@ -126,9 +126,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog',
-        'USER': 'elarrimore',
+        'USER': 'evanml',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
@@ -172,8 +172,6 @@ TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -188,7 +186,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # media config
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'os.path.join(BASE_DIR, media)'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # cloudinary config
@@ -201,13 +199,7 @@ cloudinary.config(
 
 
 
-STATICFILES_STORAGE = {
-    "statfiles":{
-        "BACKEND":
-'whitenoise.storage.CompressedManifestStaticFilesStorage',
-    },
-
-}
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
